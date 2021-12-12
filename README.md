@@ -4,12 +4,15 @@ Aplicação Laravel de e-commerce de sneakers.
 
 # Tecnologias utilizadas
 
-1. PHP
-2. Laravel
-3. Composer
-4. Docker
+1. Laravel (framework PHP)
+2. Docker
+3. Redis
+4. MySQL
+5. Bootstrap
 
 # Execução passo a passo
+
+Esse tutorial mostra passo a passo como executar o projeto em um sistema operacional Linux.
 
 ## Passo 1:
 
@@ -74,14 +77,6 @@ MEDIA_DISK=public
 
 ## Passo 2:
 
-Utilize o comando abaixo para instalar as dependências do projeto.
-
-```bash
-composer install --ignore-platform-reqs
-```
-
-## Passo 3:
-
 Em um terminal, utilize os comandos abaixo para subir o servidor, o banco de dados e o redis no Docker.
 
 ```bash
@@ -89,35 +84,12 @@ docker network create default-docker-network
 make up
 ```
 
-## Passo 4:
+## Passo 3:
 
-Em outro terminal, para iniciar o servidor de desenvolvimento para a aplicação Laravel, execute os comandos abaixo.
+Em outro terminal, para instalar as dependências do projeto e iniciar o servidor de desenvolvimento para a aplicação Laravel, execute os comandos abaixo.
 
 ```bash
 make sh
+composer install
 php artisan migrate:fresh –seed
-```
-
-## Passo 4:
-
-Deve-se utilizar o comando key:generate, ele é usado para definir uma nova chave no seu arquivo .env, que esta localizado na pasta inicial, ele seta o valor dentro de .env em APP_KEY.
-
-```bash
-php artisan key:generate
-```
-
-## Passo 5:
-
-Para aumentar a velocidade do seu aplicativo, você deve armazenar em cache todos os seus arquivos de configuração em um único arquivo usando o comando Artisan config:cache. Isso combinará todas as opções de configuração para seu aplicativo em um único arquivo que pode ser carregado rapidamente pela estrutura.
-
-```bash
-php artisan config:cache
-```
-
-## Passo 6:
-
-Para iniciar o servidor de desenvolvimento para a aplicação Laravel, execute o comando php artisan serve.
-
-```bash
-php artisan serve
 ```

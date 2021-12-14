@@ -92,7 +92,7 @@
                     <div class="card-body">
                         <div class="row" >
                             <div class="col-12 col-sm-4 col-md-3">
-                                <img class="profile-pic" src="{{asset('images/defaults/default_user.jpg')}}">
+                                <img class="profile-pic" src="{{asset('images/defaults/default_user.jpeg')}}">
                             </div>
                             <div class="col-12 col-sm-4 col-md-9">
                                 <b>Nome:</b> {{$user->name}}<br>
@@ -227,9 +227,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 @if(isset($user->photo))
-                    <img class="profile-pic edit-pic" src="{{asset('images/defaults/default_user.jpg')}}">
+                    <img class="profile-pic edit-pic" src="{{asset('images/defaults/default_user.jpeg')}}">
                 @else
-                    <img class="profile-pic edit-pic" src="{{asset('images/defaults/default_user.jpg')}}">
+                    <img class="profile-pic edit-pic" src="{{asset('images/defaults/default_user.jpeg')}}">
                 @endif
             </div>
             <div class="modal-body" id="edit-form">

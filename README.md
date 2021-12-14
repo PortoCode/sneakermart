@@ -30,7 +30,7 @@ LOG_CHANNEL=daily
 LOG_LEVEL=debug
 
 DB_CONNECTION=mysql
-DB_HOST=database
+DB_HOST=localhost
 DB_PORT=3306
 DB_DATABASE=sneakermart
 DB_USERNAME=root
@@ -45,7 +45,7 @@ SESSION_LIFETIME=120
 
 MEMCACHED_HOST=127.0.0.1
 
-REDIS_HOST=redis
+REDIS_HOST=localhost
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 
@@ -92,4 +92,5 @@ Em outro terminal, para instalar as dependências do projeto e iniciar o servido
 make sh
 composer install
 php artisan migrate:fresh –seed
+php artisan serve
 ```
